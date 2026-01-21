@@ -7,12 +7,17 @@ import java.util.*;
 
 public class TpaManager {
     private final PapazCore plugin;
-    private final Map<UUID, UUID> tpaRequests = new HashMap<>();
-    private final Map<UUID, Long> requestTimes = new HashMap<>();
+    private final Map<UUID, UUID> tpaRequests = new HashMap<UUID, UUID>();
+    private final Map<UUID, Long> requestTimes = new HashMap<UUID, Long>();
 
     public TpaManager(PapazCore plugin) {
         this.plugin = plugin;
-        Bukkit.getScheduler().runTaskTimer(plugin, this::checkTimeouts, 20L, 20L);
+        Bukkit.getScheduler().runTaskTimer(plugin, new Runnable() {
+            @Override
+            public void run() {
+                checkTimeouts();
+            }
+        }, 20L, 20L);
     }
 
     public void sendRequest(Player requester, Player target) {
@@ -35,17 +40,18 @@ public class TpaManager {
     private void checkTimeouts() {
         int timeout = plugin.getConfig().getInt("tpa.bekleme-suresi", 60) * 1000;
         long now = System.currentTimeMillis();
-        tpaRequests.entrySet().removeIf(entry -> {
+        Iterator<Map.Entry<UUID, UUID>> iterator = tpaRequests.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<UUID, UUID> entry = iterator.next();
             Long requestTime = requestTimes.get(entry.getKey());
-            if (requestTime == null) return true;
-            if (now - requestTime > timeout) {
+            if (requestTime == null || now - requestTime > timeout) {
                 Player requester = Bukkit.getPlayer(entry.getValue());
-                if (requester != null) requester.sendMessage(plugin.getPrefix() + plugin.getMessage("tpa.zaman-asimi"));
+                if (requester != null) {
+                    requester.sendMessage(plugin.getPrefix() + plugin.getMessage("tpa.zaman-asimi"));
+                }
                 requestTimes.remove(entry.getKey());
-                return true;
+                iterator.remove();
             }
-            return false;
-        });
+        }
     }
 }
-

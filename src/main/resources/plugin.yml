@@ -1,9 +1,8 @@
 name: PapazCore
 version: 1.0.0
 main: com.papaz.plugin.PapazCore
-api-version: 1.20
 author: Papaz
-description: Türkçe Minecraft Sunucu Plugini - Tüm temel özellikler tek pakette!
+description: Türkçe Minecraft Sunucu Plugini - Tüm sürümlerde çalışır (1.8-1.21)
 
 commands:
   spawn:

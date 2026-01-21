@@ -18,4 +18,3 @@ public class PlayerQuitListener implements Listener {
         plugin.getTpaManager().removeRequest(player.getUniqueId());
     }
 }
-

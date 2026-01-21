@@ -15,13 +15,9 @@ public class PlayerJoinListener implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
-        Player player = event.getPlayer();
+        final Player player = event.getPlayer();
         plugin.getEconomyManager().initPlayer(player.getUniqueId());
         plugin.getLevelManager().initPlayer(player.getUniqueId());
-        
-        String header = PapazCore.colorize("\n&6&l✦ " + plugin.getConfig().getString("sunucu.isim", "Server") + " &6&l✦\n&7Hoş geldin, &f" + player.getName() + "\n");
-        String footer = PapazCore.colorize("\n&7Online: &a" + Bukkit.getOnlinePlayers().size() + "\n");
-        player.setPlayerListHeaderFooter(header, footer);
         
         if (plugin.getDataManager().isFirstJoin(player.getUniqueId())) {
             plugin.getDataManager().setFirstJoin(player.getUniqueId(), false);
@@ -30,13 +26,18 @@ public class PlayerJoinListener implements Listener {
             event.setJoinMessage(null);
             String broadcast = plugin.getMessage("hosgeldin.yeni-oyuncu").replace("%oyuncu%", player.getName());
             Bukkit.broadcastMessage(broadcast);
-            Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                String personal = plugin.getMessage("hosgeldin.yeni-oyuncu-kisisel")
-                        .replace("%oyuncu%", player.getName())
-                        .replace("%prefix%", plugin.getPrefix())
-                        .replace("%discord%", plugin.getConfig().getString("sunucu.discord", ""));
-                player.sendMessage(personal);
+            
+            Bukkit.getScheduler().runTaskLater(plugin, new Runnable() {
+                @Override
+                public void run() {
+                    String personal = plugin.getMessage("hosgeldin.yeni-oyuncu-kisisel")
+                            .replace("%oyuncu%", player.getName())
+                            .replace("%prefix%", plugin.getPrefix())
+                            .replace("%discord%", plugin.getConfig().getString("sunucu.discord", ""));
+                    player.sendMessage(personal);
+                }
             }, 20L);
+            
             if (plugin.getConfig().getBoolean("hosgeldin.baslangic-esyalari", true)) {
                 player.getInventory().addItem(new ItemStack(Material.COOKED_BEEF, 16));
                 player.getInventory().addItem(new ItemStack(Material.STONE_SWORD));
@@ -51,4 +52,3 @@ public class PlayerJoinListener implements Listener {
         plugin.updateScoreboard(player);
     }
 }
-

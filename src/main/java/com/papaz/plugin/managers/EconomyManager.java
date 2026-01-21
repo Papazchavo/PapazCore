@@ -10,7 +10,7 @@ public class EconomyManager {
     private final PapazCore plugin;
     private final File economyFile;
     private YamlConfiguration economyData;
-    private final Map<UUID, Integer> balances = new HashMap<>();
+    private final Map<UUID, Integer> balances = new HashMap<UUID, Integer>();
 
     public EconomyManager(PapazCore plugin) {
         this.plugin = plugin;
@@ -37,7 +37,10 @@ public class EconomyManager {
         try { economyData.save(economyFile); } catch (IOException e) { e.printStackTrace(); }
     }
 
-    public int getMoney(UUID uuid) { return balances.getOrDefault(uuid, 0); }
+    public int getMoney(UUID uuid) { 
+        Integer val = balances.get(uuid);
+        return val != null ? val : 0; 
+    }
     public void setMoney(UUID uuid, int amount) { balances.put(uuid, Math.max(0, amount)); saveData(); }
     public void addMoney(UUID uuid, int amount) { setMoney(uuid, getMoney(uuid) + amount); }
     public void removeMoney(UUID uuid, int amount) { setMoney(uuid, getMoney(uuid) - amount); }
@@ -50,4 +53,3 @@ public class EconomyManager {
     }
     public String getCurrency() { return plugin.getConfig().getString("ekonomi.para-birimi", "Coin"); }
 }
-

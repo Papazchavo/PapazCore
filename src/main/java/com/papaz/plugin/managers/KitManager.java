@@ -9,7 +9,7 @@ import java.util.*;
 
 public class KitManager {
     private final PapazCore plugin;
-    private final Map<UUID, Map<String, Long>> kitCooldowns = new HashMap<>();
+    private final Map<UUID, Map<String, Long>> kitCooldowns = new HashMap<UUID, Map<String, Long>>();
 
     public KitManager(PapazCore plugin) { this.plugin = plugin; }
 
@@ -39,7 +39,12 @@ public class KitManager {
     }
 
     public void setKitUsed(UUID uuid, String kitName) {
-        kitCooldowns.computeIfAbsent(uuid, k -> new HashMap<>()).put(kitName, System.currentTimeMillis());
+        Map<String, Long> playerCooldowns = kitCooldowns.get(uuid);
+        if (playerCooldowns == null) {
+            playerCooldowns = new HashMap<String, Long>();
+            kitCooldowns.put(uuid, playerCooldowns);
+        }
+        playerCooldowns.put(kitName, System.currentTimeMillis());
     }
 
     public void giveStarterKit(Player player) {
@@ -50,17 +55,18 @@ public class KitManager {
         player.getInventory().addItem(new ItemStack(Material.TORCH, 64));
     }
 
+    @SuppressWarnings("deprecation")
     public void giveWarriorKit(Player player) {
         ItemStack sword = new ItemStack(Material.DIAMOND_SWORD);
-        sword.addEnchantment(Enchantment.SHARPNESS, 2);
+        sword.addEnchantment(Enchantment.DAMAGE_ALL, 2);
         ItemStack helmet = new ItemStack(Material.DIAMOND_HELMET);
-        helmet.addEnchantment(Enchantment.PROTECTION, 2);
+        helmet.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 2);
         ItemStack chestplate = new ItemStack(Material.DIAMOND_CHESTPLATE);
-        chestplate.addEnchantment(Enchantment.PROTECTION, 2);
+        chestplate.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 2);
         ItemStack leggings = new ItemStack(Material.DIAMOND_LEGGINGS);
-        leggings.addEnchantment(Enchantment.PROTECTION, 2);
+        leggings.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 2);
         ItemStack boots = new ItemStack(Material.DIAMOND_BOOTS);
-        boots.addEnchantment(Enchantment.PROTECTION, 2);
+        boots.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 2);
         player.getInventory().addItem(sword);
         player.getInventory().setHelmet(helmet);
         player.getInventory().setChestplate(chestplate);
@@ -69,31 +75,37 @@ public class KitManager {
         player.getInventory().addItem(new ItemStack(Material.GOLDEN_APPLE, 64));
     }
 
+    @SuppressWarnings("deprecation")
     public void giveDiamondKit(Player player) {
         ItemStack sword = new ItemStack(Material.DIAMOND_SWORD);
-        sword.addEnchantment(Enchantment.SHARPNESS, 5);
+        sword.addEnchantment(Enchantment.DAMAGE_ALL, 5);
         sword.addEnchantment(Enchantment.FIRE_ASPECT, 2);
-        sword.addEnchantment(Enchantment.UNBREAKING, 3);
+        sword.addEnchantment(Enchantment.DURABILITY, 3);
         ItemStack helmet = new ItemStack(Material.DIAMOND_HELMET);
-        helmet.addEnchantment(Enchantment.PROTECTION, 4);
-        helmet.addEnchantment(Enchantment.UNBREAKING, 3);
+        helmet.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+        helmet.addEnchantment(Enchantment.DURABILITY, 3);
         ItemStack chestplate = new ItemStack(Material.DIAMOND_CHESTPLATE);
-        chestplate.addEnchantment(Enchantment.PROTECTION, 4);
-        chestplate.addEnchantment(Enchantment.UNBREAKING, 3);
+        chestplate.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+        chestplate.addEnchantment(Enchantment.DURABILITY, 3);
         ItemStack leggings = new ItemStack(Material.DIAMOND_LEGGINGS);
-        leggings.addEnchantment(Enchantment.PROTECTION, 4);
-        leggings.addEnchantment(Enchantment.UNBREAKING, 3);
+        leggings.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+        leggings.addEnchantment(Enchantment.DURABILITY, 3);
         ItemStack boots = new ItemStack(Material.DIAMOND_BOOTS);
-        boots.addEnchantment(Enchantment.PROTECTION, 4);
-        boots.addEnchantment(Enchantment.UNBREAKING, 3);
+        boots.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+        boots.addEnchantment(Enchantment.DURABILITY, 3);
         player.getInventory().addItem(sword);
         player.getInventory().setHelmet(helmet);
         player.getInventory().setChestplate(chestplate);
         player.getInventory().setLeggings(leggings);
         player.getInventory().setBoots(boots);
-        player.getInventory().addItem(new ItemStack(Material.ENCHANTED_GOLDEN_APPLE, 64));
-        player.getInventory().addItem(new ItemStack(Material.ELYTRA));
-        player.getInventory().addItem(new ItemStack(Material.FIREWORK_ROCKET, 64));
+        
+        // Golden apple - 1.8'de GOLDEN_APPLE data 1 enchanted golden apple
+        try {
+            Material egapple = Material.valueOf("ENCHANTED_GOLDEN_APPLE");
+            player.getInventory().addItem(new ItemStack(egapple, 64));
+        } catch (Exception e) {
+            // 1.8 için data value kullan
+            player.getInventory().addItem(new ItemStack(Material.GOLDEN_APPLE, 64, (short) 1));
+        }
     }
 }
-

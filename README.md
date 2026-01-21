@@ -1,6 +1,11 @@
-<p align="center">
-  <img src="https://i.imgur.com/JkXwBqY.png" alt="PapazCore Logo" width="400"/>
-</p>
+```
+    ____                        _____              
+   / __ \____ _____  ____ _____/ ___/___  ________ 
+  / /_/ / __ `/ __ \/ __ `/_  / /   / _ \/ ___/ _ \
+ / ____/ /_/ / /_/ / /_/ / / / /___/ ___/ /  /  __/
+/_/    \__,_/ .___/\__,_/ /__\____/\___/_/   \___/ 
+           /_/                                      
+```
 
 <h1 align="center">🎮 PapazCore</h1>
 
@@ -18,10 +23,10 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Minecraft-1.20+-green?style=for-the-badge&logo=minecraft" alt="Minecraft"/>
-  <img src="https://img.shields.io/badge/Java-17+-orange?style=for-the-badge&logo=openjdk" alt="Java"/>
-  <img src="https://img.shields.io/badge/Spigot-Paper-yellow?style=for-the-badge" alt="Spigot"/>
-  <img src="https://img.shields.io/badge/Dil-Türkçe-red?style=for-the-badge" alt="Türkçe"/>
+  <img src="https://img.shields.io/badge/Minecraft-1.8--1.21-brightgreen?style=for-the-badge&logo=minecraft" alt="Minecraft"/>
+  <img src="https://img.shields.io/badge/Java-8+-orange?style=for-the-badge&logo=openjdk" alt="Java"/>
+  <img src="https://img.shields.io/badge/Spigot%20%7C%20Paper-Desteklenir-blue?style=for-the-badge" alt="Spigot"/>
+  <img src="https://img.shields.io/badge/Dil-Türkçe%20🇹🇷-red?style=for-the-badge" alt="Türkçe"/>
 </p>
 
 <p align="center">
@@ -29,20 +34,23 @@
   <img src="https://img.shields.io/github/stars/Papazchavo/PapazCore?style=flat-square" alt="Stars"/>
   <img src="https://img.shields.io/github/forks/Papazchavo/PapazCore?style=flat-square" alt="Forks"/>
   <img src="https://img.shields.io/github/issues/Papazchavo/PapazCore?style=flat-square" alt="Issues"/>
+  <img src="https://img.shields.io/github/v/release/Papazchavo/PapazCore?style=flat-square" alt="Release"/>
 </p>
 
 ---
 
-## 📸 Ekran Görüntüleri
+## 🌟 Neden PapazCore?
 
-<p align="center">
-  <img src="https://i.imgur.com/8qYxWvN.png" alt="Scoreboard" width="300"/>
-  <img src="https://i.imgur.com/L3mKz9X.png" alt="Market GUI" width="300"/>
-</p>
-
-<p align="center">
-  <img src="https://i.imgur.com/QHj5CXs.png" alt="Welcome Message" width="600"/>
-</p>
+```
+┌─────────────────────────────────────────────────────────────┐
+│  ✅ Tek plugin, tüm temel özellikler                        │
+│  ✅ %100 Türkçe mesajlar                                    │
+│  ✅ 1.8 - 1.21 tüm sürümlerde çalışır                       │
+│  ✅ Kolay kurulum ve yapılandırma                           │
+│  ✅ Hafif ve performanslı                                   │
+│  ✅ Açık kaynak ve ücretsiz                                 │
+└─────────────────────────────────────────────────────────────┘
+```
 
 ---
 
@@ -53,99 +61,115 @@
 <td width="50%">
 
 ### 🏠 Ev Sistemi
-- Birden fazla ev kaydetme
-- Kolay ışınlanma
-- Ev listeleme ve silme
+```
+/sethome [isim]  → Ev kaydet
+/home [isim]     → Eve ışınlan
+/delhome [isim]  → Evi sil
+/homes           → Evleri listele
+```
 
 ### 📍 Spawn Sistemi  
-- Spawn noktası ayarlama
-- Gecikmeli ışınlanma
-- Hareket kontrolü
+```
+/spawn           → Spawn'a ışınlan
+/setspawn        → Spawn ayarla (Admin)
+```
 
 ### 🔀 TPA Sistemi
-- Oyuncuya ışınlanma isteği
-- Kabul/Reddet sistemi
-- Otomatik zaman aşımı
+```
+/tpa <oyuncu>    → Işınlanma isteği
+/tpkabul         → Kabul et
+/tpreddet        → Reddet
+```
 
 ### 💰 Ekonomi Sistemi
-- Başlangıç parası
-- Para transferi
-- Bakiye kontrolü
+```
+/para            → Bakiyeni gör
+/paragonder      → Para transfer et
+💵 Başlangıç: 1000 Coin
+```
 
 </td>
 <td width="50%">
 
 ### 🎁 Kit Sistemi
-- Başlangıç kiti (herkes)
-- Savaşçı kiti (VIP)
-- Elmas kiti (Admin)
-- Bekleme süreleri
+```
+/kit baslangic   → Herkes (1 saat)
+/kit savasci     → VIP (6 saat)
+/kit elmas       → Admin
+```
 
 ### 📈 Seviye Sistemi
-- Maden kazarak XP kazan
-- Mob öldürerek XP kazan
-- Seviye atlama ödülleri
+```
+⛏️ Maden kaz    → +5 XP
+⚔️ Mob öldür    → +10 XP
+🎉 Seviye atla  → Para ödülü!
+```
 
 ### 🏪 GUI Market
-- Kolay alışveriş
-- Özelleştirilebilir fiyatlar
-- Görsel arayüz
+```
+/market          → Dükkânı aç
+💎 Elmas, Demir, Altın
+🍎 Altın Elma, Tanrı Elması
+```
 
 ### ⚔️ PvP Sistemi
-- PvP aç/kapa
-- Öldürme ödülleri
-- İstatistikler
+```
+/pvp             → Aç/Kapa
+/stats           → İstatistikler
+🏆 Öldürme ödülü: 50 Coin
+```
 
 </td>
 </tr>
 </table>
 
-### 🌟 Ekstra Özellikler
+---
+
+## 🎨 Ekstra Özellikler
 
 | Özellik | Açıklama |
-|---------|----------|
-| 👋 Hoşgeldin Sistemi | Yeni oyunculara özel karşılama ve başlangıç eşyaları |
-| 💬 Sohbet Formatı | VIP/Admin/Mod rozetli özel sohbet formatı |
-| 🚫 Reklam Engelleme | Otomatik reklam engelleme sistemi |
-| 🛡️ Spawn Koruması | Spawn bölgesinde PvP koruması |
-| 📢 Otomatik Mesajlar | Belirli aralıklarla otomatik duyurular |
-| 📊 Scoreboard | Anlık bilgi gösteren yan panel |
-| ✨ Özel Efektler | Elmas bulma, altın elma yeme efektleri |
+|:-------:|:---------|
+| 👋 | **Hoşgeldin Sistemi** - Yeni oyunculara özel karşılama + başlangıç eşyaları |
+| 💬 | **Sohbet Formatı** - `[Admin]`, `[VIP]`, `[Mod]`, `[Üye]` rozetleri |
+| 🚫 | **Reklam Engelleme** - `.com`, `.net`, `discord` otomatik engellenir |
+| 🛡️ | **Spawn Koruması** - Spawn çevresinde PvP koruması |
+| 📢 | **Otomatik Mesajlar** - 5 dakikada bir rastgele duyuru |
+| 📊 | **Scoreboard** - Anlık para, seviye, online sayısı |
+| ✨ | **Özel Efektler** - Elmas bulunca, altın elma yiyince efektler |
 
 ---
 
 ## 📥 Kurulum
 
-### Hızlı Kurulum
+### 📋 Gereksinimler
+
+| Program | Versiyon | Link |
+|---------|----------|------|
+| ☕ Java | 8+ | [Adoptium](https://adoptium.net/) |
+| 🔧 Maven | 3.6+ | [Apache Maven](https://maven.apache.org/) |
+| 🎮 Sunucu | Spigot/Paper 1.8-1.21 | [PaperMC](https://papermc.io/) |
+
+### 🚀 Hızlı Kurulum
 
 ```bash
-# 1. Repoyu klonla
+# 1️⃣ Repoyu klonla
 git clone https://github.com/Papazchavo/PapazCore.git
 
-# 2. Klasöre gir
+# 2️⃣ Klasöre gir
 cd PapazCore
 
-# 3. Derle (Maven gerekli)
+# 3️⃣ Derle
 mvn clean package
 
-# 4. JAR dosyasını al
-# target/PapazCore-1.0.0.jar
+# 4️⃣ JAR dosyasını al → target/PapazCore-1.0.0.jar
 ```
 
-### Windows Kullanıcıları İçin
+### 🪟 Windows Kullanıcıları
 
-1. **`DERLE.bat`** dosyasına çift tıkla
+1. `DERLE.bat` dosyasına **çift tıkla**
 2. `target/PapazCore-1.0.0.jar` dosyasını al
 3. Sunucunun `plugins` klasörüne kopyala
 4. Sunucuyu yeniden başlat ✅
-
-### Gereksinimler
-
-| Program | Versiyon | İndirme Linki |
-|---------|----------|---------------|
-| Java | 17+ | [Adoptium](https://adoptium.net/) |
-| Maven | 3.6+ | [Apache Maven](https://maven.apache.org/) |
-| Sunucu | Spigot/Paper 1.20+ | [PaperMC](https://papermc.io/) |
 
 ---
 
@@ -153,91 +177,92 @@ mvn clean package
 
 ### 👤 Oyuncu Komutları
 
-| Komut | Açıklama | Kullanım |
-|-------|----------|----------|
-| `/spawn` | Spawn'a ışınlan | `/spawn` |
-| `/sethome` | Ev kaydet | `/sethome [isim]` |
-| `/home` | Eve ışınlan | `/home [isim]` |
-| `/delhome` | Evi sil | `/delhome [isim]` |
-| `/homes` | Evlerini listele | `/homes` |
-| `/tpa` | Işınlanma isteği | `/tpa <oyuncu>` |
-| `/tpkabul` | İsteği kabul et | `/tpkabul` |
-| `/tpreddet` | İsteği reddet | `/tpreddet` |
-| `/para` | Bakiyeni gör | `/para [oyuncu]` |
-| `/paragonder` | Para gönder | `/paragonder <oyuncu> <miktar>` |
-| `/kit` | Kit al | `/kit [baslangic/savasci/elmas]` |
-| `/seviye` | Seviyeni gör | `/seviye [oyuncu]` |
-| `/stats` | İstatistikler | `/stats [oyuncu]` |
-| `/pvp` | PvP aç/kapa | `/pvp` |
-| `/market` | Marketi aç | `/market` |
+| Komut | Açıklama |
+|-------|----------|
+| `/spawn` | Spawn'a ışınlan |
+| `/sethome [isim]` | Ev kaydet |
+| `/home [isim]` | Eve ışınlan |
+| `/delhome [isim]` | Evi sil |
+| `/homes` | Evlerini listele |
+| `/tpa <oyuncu>` | Işınlanma isteği |
+| `/tpkabul` | Kabul et |
+| `/tpreddet` | Reddet |
+| `/para` | Bakiyeni gör |
+| `/paragonder <oyuncu> <miktar>` | Para gönder |
+| `/kit` | Kit listesi |
+| `/seviye` | Seviyeni gör |
+| `/stats` | İstatistikler |
+| `/pvp` | PvP aç/kapa |
+| `/market` | Market GUI |
 
 ### 👑 Admin Komutları
 
-| Komut | Açıklama | Yetki |
-|-------|----------|-------|
-| `/setspawn` | Spawn ayarla | `papaz.admin` |
-| `/fly` | Uçuş modu | `papaz.fly` |
-| `/heal` | İyileştir | `papaz.heal` |
-| `/feed` | Doyur | `papaz.feed` |
-| `/gm` | Gamemode | `papaz.gamemode` |
-| `/invsee` | Envanter gör | `papaz.invsee` |
-| `/broadcast` | Duyuru | `papaz.broadcast` |
+| Komut | Yetki | Açıklama |
+|-------|-------|----------|
+| `/setspawn` | `papaz.admin` | Spawn ayarla |
+| `/fly` | `papaz.fly` | Uçuş modu |
+| `/heal` | `papaz.heal` | İyileştir |
+| `/feed` | `papaz.feed` | Doyur |
+| `/gm <0/1/2/3>` | `papaz.gamemode` | Gamemode |
+| `/invsee <oyuncu>` | `papaz.invsee` | Envanter gör |
+| `/broadcast <mesaj>` | `papaz.broadcast` | Duyuru |
 
 ---
 
 ## ⚙️ Yapılandırma
 
-### config.yml
+### 📄 config.yml
 
 ```yaml
-# Sunucu Bilgileri
+# 🏷️ Sunucu Bilgileri
 sunucu:
   isim: "&6&lPapaz's Server"
   prefix: "&8[&6&l★&8] &e"
   discord: "discord.gg/sunucun"
 
-# Ekonomi
+# 💰 Ekonomi
 ekonomi:
   para-birimi: "Coin"
   baslangic-parasi: 1000
 
-# Market Fiyatları
+# 🏪 Market Fiyatları
 market:
   elmas:
     fiyat: 100
   demir:
     fiyat: 25
-  # ... daha fazlası config.yml'de
+  altin:
+    fiyat: 50
 ```
 
-### messages.yml
-
-Tüm mesajlar Türkçe ve tamamen özelleştirilebilir!
+### 📝 messages.yml
+> Tüm mesajlar Türkçe ve %100 özelleştirilebilir!
 
 ---
 
 ## 🔑 Yetkiler
 
-### Admin Yetkileri
+### 👑 Admin
 
 | Yetki | Açıklama |
 |-------|----------|
 | `papaz.admin` | Tüm admin komutları |
-| `papaz.fly` | Uçuş komutu |
+| `papaz.fly` | Uçuş |
 | `papaz.heal` | İyileştirme |
 | `papaz.feed` | Doyurma |
-| `papaz.gamemode` | Gamemode değiştirme |
+| `papaz.gamemode` | Gamemode |
 | `papaz.invsee` | Envanter görme |
-| `papaz.broadcast` | Duyuru yapma |
+| `papaz.broadcast` | Duyuru |
+| `papaz.kit.admin` | Admin kiti |
 
-### VIP Yetkileri
+### ⭐ VIP
 
 | Yetki | Açıklama |
 |-------|----------|
 | `papaz.kit.vip` | Savaşçı kiti |
 | `papaz.vip` | VIP sohbet rozeti |
 
-### Mod Yetkileri
+### 🛡️ Mod
 
 | Yetki | Açıklama |
 |-------|----------|
@@ -245,43 +270,60 @@ Tüm mesajlar Türkçe ve tamamen özelleştirilebilir!
 
 ---
 
-## 🛠️ Derleme
+## 🔧 Sürüm Uyumluluğu
 
-```bash
-# Repoyu klonla
-git clone https://github.com/Papazchavo/PapazCore.git
-cd PapazCore
-
-# Maven ile derle
-mvn clean package
-
-# JAR dosyası burada:
-# target/PapazCore-1.0.0.jar
 ```
-
----
-
-## 📝 Lisans
-
-Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır.
+┌────────────────────────────────────────┐
+│  ✅ 1.8.x   - Tam Uyumlu               │
+│  ✅ 1.9.x   - Tam Uyumlu               │
+│  ✅ 1.10.x  - Tam Uyumlu               │
+│  ✅ 1.11.x  - Tam Uyumlu               │
+│  ✅ 1.12.x  - Tam Uyumlu               │
+│  ✅ 1.13.x  - Tam Uyumlu               │
+│  ✅ 1.14.x  - Tam Uyumlu               │
+│  ✅ 1.15.x  - Tam Uyumlu               │
+│  ✅ 1.16.x  - Tam Uyumlu               │
+│  ✅ 1.17.x  - Tam Uyumlu               │
+│  ✅ 1.18.x  - Tam Uyumlu               │
+│  ✅ 1.19.x  - Tam Uyumlu               │
+│  ✅ 1.20.x  - Tam Uyumlu               │
+│  ✅ 1.21.x  - Tam Uyumlu               │
+└────────────────────────────────────────┘
+```
 
 ---
 
 ## 🤝 Katkıda Bulunma
 
-1. Bu repoyu fork'layın
-2. Feature branch oluşturun (`git checkout -b feature/yeniOzellik`)
-3. Değişikliklerinizi commit'leyin (`git commit -m 'Yeni özellik eklendi'`)
-4. Branch'inizi push'layın (`git push origin feature/yeniOzellik`)
-5. Pull Request açın
+```bash
+# 1. Fork'la
+# 2. Branch oluştur
+git checkout -b feature/yeniOzellik
+
+# 3. Commit yap
+git commit -m "Yeni özellik eklendi"
+
+# 4. Push et
+git push origin feature/yeniOzellik
+
+# 5. Pull Request aç
+```
 
 ---
 
-## 📞 İletişim & Destek
+## 📞 Destek
 
-- 🐛 **Bug Bildirimi:** [Issues](https://github.com/Papazchavo/PapazCore/issues)
-- 💬 **Discord:** discord.gg/sunucun
-- ⭐ **Beğendiysen:** Yıldız vermeyi unutma!
+| Platform | Link |
+|----------|------|
+| 🐛 Bug Bildirimi | [Issues](https://github.com/Papazchavo/PapazCore/issues) |
+| 💬 Discord | discord.gg/sunucun |
+| ⭐ Beğendiysen | Yıldız ver! |
+
+---
+
+## 📜 Lisans
+
+Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır.
 
 ---
 
@@ -290,6 +332,8 @@ Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır.
   <i>Türk Minecraft topluluğu için</i>
 </p>
 
-<p align="center">
-  <img src="https://i.imgur.com/mVsBY1Y.png" alt="Footer" width="600"/>
-</p>
+```
+═══════════════════════════════════════════════════════════════
+     ⭐ Beğendiysen yıldız vermeyi unutma! ⭐
+═══════════════════════════════════════════════════════════════
+```

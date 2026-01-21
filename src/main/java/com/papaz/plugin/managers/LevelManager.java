@@ -12,8 +12,8 @@ public class LevelManager {
     private final PapazCore plugin;
     private final File levelFile;
     private YamlConfiguration levelData;
-    private final Map<UUID, Integer> levels = new HashMap<>();
-    private final Map<UUID, Integer> xp = new HashMap<>();
+    private final Map<UUID, Integer> levels = new HashMap<UUID, Integer>();
+    private final Map<UUID, Integer> xp = new HashMap<UUID, Integer>();
 
     public LevelManager(PapazCore plugin) {
         this.plugin = plugin;
@@ -38,13 +38,20 @@ public class LevelManager {
     public void saveData() {
         for (UUID uuid : levels.keySet()) {
             levelData.set("players." + uuid.toString() + ".level", levels.get(uuid));
-            levelData.set("players." + uuid.toString() + ".xp", xp.getOrDefault(uuid, 0));
+            Integer xpVal = xp.get(uuid);
+            levelData.set("players." + uuid.toString() + ".xp", xpVal != null ? xpVal : 0);
         }
         try { levelData.save(levelFile); } catch (IOException e) { e.printStackTrace(); }
     }
 
-    public int getLevel(UUID uuid) { return levels.getOrDefault(uuid, 1); }
-    public int getXp(UUID uuid) { return xp.getOrDefault(uuid, 0); }
+    public int getLevel(UUID uuid) { 
+        Integer val = levels.get(uuid);
+        return val != null ? val : 1; 
+    }
+    public int getXp(UUID uuid) { 
+        Integer val = xp.get(uuid);
+        return val != null ? val : 0; 
+    }
     public int getRequiredXp(UUID uuid) { return getLevel(uuid) * 100; }
 
     public void addXp(Player player, int amount) {
@@ -62,7 +69,13 @@ public class LevelManager {
                     .replace("%odul%", String.valueOf(reward))
                     .replace("%birim%", plugin.getEconomyManager().getCurrency());
             player.sendMessage(message);
-            player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
+            try {
+                player.playSound(player.getLocation(), Sound.valueOf("LEVEL_UP"), 1.0f, 1.0f);
+            } catch (Exception e) {
+                try {
+                    player.playSound(player.getLocation(), Sound.valueOf("ENTITY_PLAYER_LEVELUP"), 1.0f, 1.0f);
+                } catch (Exception ignored) {}
+            }
         }
         xp.put(uuid, currentXp);
         saveData();
@@ -72,4 +85,3 @@ public class LevelManager {
         if (!levels.containsKey(uuid)) { levels.put(uuid, 1); xp.put(uuid, 0); saveData(); }
     }
 }
-

@@ -15,8 +15,11 @@ public class PlayerDamageListener implements Listener {
 
     @EventHandler
     public void onDamage(EntityDamageByEntityEvent event) {
-        if (!(event.getEntity() instanceof Player victim)) return;
-        if (!(event.getDamager() instanceof Player attacker)) return;
+        if (!(event.getEntity() instanceof Player)) return;
+        if (!(event.getDamager() instanceof Player)) return;
+        Player victim = (Player) event.getEntity();
+        Player attacker = (Player) event.getDamager();
+        
         Location spawn = plugin.getDataManager().getSpawnLocation();
         if (spawn != null && plugin.getConfig().getBoolean("spawn-korumasi.aktif", true)) {
             int radius = plugin.getConfig().getInt("spawn-korumasi.yaricap", 10);
@@ -50,4 +53,3 @@ public class PlayerDamageListener implements Listener {
         killer.sendMessage(plugin.getPrefix() + plugin.getMessage("pvp.odul").replace("%odul%", String.valueOf(reward)).replace("%birim%", plugin.getEconomyManager().getCurrency()));
     }
 }
-

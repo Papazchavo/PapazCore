@@ -20,4 +20,3 @@ public class EntityDeathListener implements Listener {
         }
     }
 }
-
