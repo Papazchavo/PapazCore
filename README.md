@@ -396,7 +396,7 @@ market:
 | Platform | Link |
 |----------|------|
 | 🐛 Bug Bildirimi | [Issues](https://github.com/Papazchavo/PapazCore/issues) |
-| 💬 Discord | discord.gg/sunucun |
+| 💬 Discord | discord.gg/devcode |
 | ⭐ Beğendiysen | Yıldız ver! |
 
 ---
