@@ -1,0 +1,105 @@
+name: PapazCore
+version: 1.0.0
+main: com.papaz.plugin.PapazCore
+api-version: 1.20
+author: Papaz
+description: Türkçe Minecraft Sunucu Plugini - Tüm temel özellikler tek pakette!
+
+commands:
+  spawn:
+    description: Spawn noktasına ışınlan
+    usage: /spawn
+  setspawn:
+    description: Spawn noktasını ayarla
+    permission: papaz.admin
+  sethome:
+    description: Ev kaydet
+    usage: /sethome [isim]
+  home:
+    description: Eve ışınlan
+    usage: /home [isim]
+  delhome:
+    description: Evi sil
+    usage: /delhome [isim]
+  homes:
+    description: Evlerini listele
+  tpa:
+    description: Işınlanma isteği gönder
+    usage: /tpa <oyuncu>
+  tpaccept:
+    description: Işınlanma isteğini kabul et
+    aliases: [tpkabul]
+  tpdeny:
+    description: Işınlanma isteğini reddet
+    aliases: [tpreddet]
+  para:
+    description: Bakiyeni gör
+    aliases: [bakiye, money, bal]
+  paragonder:
+    description: Para gönder
+    aliases: [pay]
+    usage: /paragonder <oyuncu> <miktar>
+  kit:
+    description: Kit al
+    usage: /kit [kit_adi]
+  fly:
+    description: Uçuş modunu aç/kapa
+    permission: papaz.fly
+  heal:
+    description: Kendini iyileştir
+    permission: papaz.heal
+  feed:
+    description: Kendini doyur
+    permission: papaz.feed
+  gm:
+    description: Oyun modunu değiştir
+    permission: papaz.gamemode
+    usage: /gm <0/1/2/3>
+  invsee:
+    description: Oyuncunun envanterini gör
+    permission: papaz.invsee
+    usage: /invsee <oyuncu>
+  broadcast:
+    description: Duyuru yap
+    permission: papaz.broadcast
+    aliases: [bc, duyuru]
+  market:
+    description: Marketi aç
+    aliases: [shop, dukkan]
+  seviye:
+    description: Seviyeni gör
+    aliases: [level]
+  stats:
+    description: İstatistiklerini gör
+    aliases: [istatistik]
+  pvp:
+    description: PvP modunu aç/kapa
+
+permissions:
+  papaz.admin:
+    description: Tüm admin komutları
+    default: op
+  papaz.fly:
+    description: Uçuş komutu
+    default: op
+  papaz.heal:
+    description: İyileştirme komutu
+    default: op
+  papaz.feed:
+    description: Doyurma komutu
+    default: op
+  papaz.gamemode:
+    description: Gamemode komutu
+    default: op
+  papaz.invsee:
+    description: Envanter görme komutu
+    default: op
+  papaz.broadcast:
+    description: Duyuru komutu
+    default: op
+  papaz.kit.vip:
+    description: VIP kit
+    default: false
+  papaz.kit.admin:
+    description: Admin kit
+    default: op

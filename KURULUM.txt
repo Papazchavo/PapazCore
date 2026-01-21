@@ -1,0 +1,158 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║        🎮 BARANPLUGIN KURULUM REHBERİ 🎮                         ║
+║        Minecraft Sunucu Plugini                                   ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+
+═══════════════════════════════════════════════════════════════════
+                    📥 HIZLI KURULUM (2 ADIM)
+═══════════════════════════════════════════════════════════════════
+
+ADIM 1: Plugini Derle
+─────────────────────
+   • "DERLE.bat" dosyasına çift tıkla
+   • Bekle, "target" klasöründe JAR dosyası oluşacak
+
+ADIM 2: Sunucuya Kur
+────────────────────
+   • "target/BaranPlugin-1.0.0.jar" dosyasını al
+   • Sunucunun "plugins" klasörüne kopyala
+   • Sunucuyu yeniden başlat
+   • TAMAM! 🎉
+
+
+═══════════════════════════════════════════════════════════════════
+                    ⚠️ GEREKLİ PROGRAMLAR
+═══════════════════════════════════════════════════════════════════
+
+1. JAVA 17 veya üstü
+   İndir: https://adoptium.net/
+   
+2. MAVEN (Derleme için)
+   İndir: https://maven.apache.org/download.cgi
+   
+   Maven Kurulumu:
+   • ZIP dosyasını indir ve bir klasöre çıkart
+   • Sistem değişkenlerine "bin" klasörünü ekle
+   • CMD'de "mvn -v" yazarak kontrol et
+
+
+═══════════════════════════════════════════════════════════════════
+                    🎮 PLUGIN ÖZELLİKLERİ
+═══════════════════════════════════════════════════════════════════
+
+✅ Hoşgeldin Sistemi - Yeni oyunculara özel karşılama
+✅ Ev Sistemi - /sethome, /home, /delhome, /homes
+✅ Spawn Sistemi - /spawn, /setspawn
+✅ TPA Sistemi - /tpa, /tpkabul, /tpreddet
+✅ Ekonomi - /para, /paragonder (1000 Coin başlangıç)
+✅ Kit Sistemi - /kit baslangic, /kit savasci, /kit elmas
+✅ Seviye Sistemi - Maden kaz, XP kazan, seviye atla
+✅ GUI Market - /market ile dükkân aç
+✅ PvP Sistemi - /pvp aç/kapa, /stats istatistik
+✅ Admin Komutları - /fly, /heal, /feed, /gm, /invsee
+✅ Scoreboard - Otomatik bilgi paneli
+✅ Sohbet Formatı - VIP/Admin/Mod rozetleri
+✅ Reklam Engelleme - Otomatik
+✅ Spawn Koruması - Spawn'da PvP yok
+
+
+═══════════════════════════════════════════════════════════════════
+                    📋 TÜM KOMUTLAR
+═══════════════════════════════════════════════════════════════════
+
+OYUNCU KOMUTLARI:
+─────────────────
+/spawn              - Spawn'a ışınlan
+/sethome [isim]     - Ev kaydet
+/home [isim]        - Eve ışınlan
+/delhome [isim]     - Evi sil
+/homes              - Evlerini listele
+/tpa <oyuncu>       - Işınlanma isteği gönder
+/tpkabul            - İsteği kabul et
+/tpreddet           - İsteği reddet
+/para               - Bakiyeni gör
+/paragonder <oyuncu> <miktar> - Para gönder
+/kit                - Kit listesi
+/kit baslangic      - Başlangıç kiti al
+/seviye             - Seviyeni gör
+/stats              - İstatistiklerini gör
+/pvp                - PvP aç/kapa
+/market             - Dükkânı aç
+
+ADMIN KOMUTLARI:
+────────────────
+/setspawn           - Spawn noktası ayarla
+/fly [oyuncu]       - Uçuş modu
+/heal [oyuncu]      - İyileştir
+/feed [oyuncu]      - Doyur
+/gm <0/1/2/3>       - Oyun modu değiştir
+/invsee <oyuncu>    - Envanteri gör
+/broadcast <mesaj>  - Duyuru yap
+
+
+═══════════════════════════════════════════════════════════════════
+                    ⚙️ AYARLAR
+═══════════════════════════════════════════════════════════════════
+
+Plugin kurulduktan sonra "plugins/BaranPlugin" klasöründe:
+
+config.yml → Tüm ayarlar burada:
+  • Sunucu adı
+  • Discord linki
+  • Başlangıç parası
+  • Market fiyatları
+  • Kit bekleme süreleri
+  • XP kazanım oranları
+
+messages.yml → Tüm mesajları Türkçe özelleştir
+
+
+═══════════════════════════════════════════════════════════════════
+                    🔑 YETKİLER
+═══════════════════════════════════════════════════════════════════
+
+OP oyuncular tüm komutları kullanabilir.
+
+Normal oyunculara yetki vermek için LuckPerms kullan:
+  /lp user <oyuncu> permission set baran.fly true
+
+Yetkiler:
+  baran.admin     - Tüm admin komutları
+  baran.fly       - Uçuş
+  baran.heal      - İyileştirme
+  baran.feed      - Doyurma
+  baran.gamemode  - Gamemode
+  baran.invsee    - Envanter görme
+  baran.broadcast - Duyuru
+  baran.kit.vip   - VIP kit
+  baran.kit.admin - Admin kit
+  baran.vip       - VIP sohbet rozeti
+  baran.mod       - Mod sohbet rozeti
+
+
+═══════════════════════════════════════════════════════════════════
+                    ❓ SIKÇA SORULAN SORULAR
+═══════════════════════════════════════════════════════════════════
+
+S: "mvn" komutu bulunamadı diyor?
+C: Maven'i yükleyip PATH'e eklemelisin.
+
+S: Derleme hatası alıyorum?
+C: Java 17 yüklü olduğundan emin ol.
+
+S: Plugin yüklenmiyor?
+C: Spigot/Paper 1.20+ sunucu kullanmalısın.
+
+S: Komutlar çalışmıyor?
+C: /plugins yazarak pluginin yüklendiğini kontrol et.
+
+
+═══════════════════════════════════════════════════════════════════
+
+                    İyi Oyunlar! 🎮
+                    
+═══════════════════════════════════════════════════════════════════
+

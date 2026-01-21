@@ -1,0 +1,110 @@
+# PapazCore Mesajları
+
+genel:
+  yetki-yok: "&cBu komutu kullanma yetkin yok!"
+  oyuncu-bulunamadi: "&cBu oyuncu bulunamadı!"
+  gecersiz-miktar: "&cGeçerli bir miktar gir!"
+
+hosgeldin:
+  yeni-oyuncu: |
+    &8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          &a&l✦ YENİ OYUNCU ✦
+       &f%oyuncu% &7sunucumuza ilk kez katıldı!
+    &8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  yeni-oyuncu-kisisel: |
+    &8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       %prefix%&aHoş geldin &f%oyuncu%&a!
+       &7► &f/spawn &7- Spawn'a ışınlan
+       &7► &f/kit &7- Kit al
+       &7► &f/para &7- Paranı gör
+       &7Discord: &b%discord%
+    &8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  giris: "&a%oyuncu% &7sunucuya katıldı!"
+  cikis: "&c%oyuncu% &7sunucudan ayrıldı."
+
+spawn:
+  ayarlandi: "&aSpawn noktası ayarlandı!"
+  ayarlanmamis: "&cSpawn noktası henüz ayarlanmamış!"
+  isinlanma-basliyor: "&e%sure% saniye içinde spawn'a ışınlanacaksın..."
+  hareket-etme: "&7Hareket etme!"
+  isinlanma-iptal: "&cIşınlanma iptal edildi!"
+  isinlandin: "&aSpawn'a ışınlandın!"
+
+ev:
+  ayarlandi: "&a'%ev%' &7adlı evin ayarlandı!"
+  bulunamadi: "&c'%ev%' &7adlı bir evin yok!"
+  ayarla-bilgi: "&7Ev ayarlamak için: &f/sethome %ev%"
+  isinlanma: "&eEvine ışınlanıyorsun..."
+  isinlandin: "&a'%ev%' &7adlı evine ışınlandın!"
+  silindi: "&c'%ev%' &7adlı evin silindi!"
+  liste-baslik: "&6Evlerin:"
+
+tpa:
+  kendine-gonderemezsin: "&cKendine istek gönderemezsin!"
+  gonderildi: "&e%oyuncu%&7'e ışınlanma isteği gönderildi!"
+  istek-aldin: "&e%oyuncu% &7sana ışınlanmak istiyor!"
+  kabul-reddet: "&7Kabul: &a/tpkabul &8| &7Reddet: &c/tpreddet"
+  istek-yok: "&cBekleyen bir ışınlanma isteğin yok!"
+  zaman-asimi: "&cIşınlanma isteği zaman aşımına uğradı."
+  kabul-edildi: "&a%oyuncu%&7'e ışınlandın!"
+  sana-isinlandi: "&a%oyuncu% &7sana ışınlandı!"
+  reddedildi: "&c%oyuncu% &7ışınlanma isteğini reddetti!"
+  reddettin: "&cIsteği reddettin!"
+  oyuncu-cevrimdisi: "&cOyuncu artık çevrimiçi değil!"
+
+ekonomi:
+  bakiye: |
+    &8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    %prefix%&6%oyuncu%'in Bakiyesi:
+      &8► &e%para% &6%birim%
+    &8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  kendine-gonderemezsin: "&cKendine para gönderemezsin!"
+  yetersiz-bakiye: "&cYeterli paran yok!"
+  gonderildi: "&a%alici%&7'e &e%miktar% %birim% &7gönderdin!"
+  aldin: "&a%gonderen% &7sana &e%miktar% %birim% &7gönderdi!"
+
+kit:
+  liste: |
+    &8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    %prefix%&6Mevcut Kitler:
+      &8► &a/kit baslangic &7- Başlangıç kiti
+      &8► &e/kit savasci &7- Savaşçı kiti &8[&6VIP&8]
+      &8► &c/kit elmas &7- Elmas kiti &8[&4Admin&8]
+    &8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  bekleme: "&cBu kiti tekrar almak için &e%sure% &cbeklemelisin!"
+  aldin: "&a%kit% kitini aldın!"
+  bulunamadi: "&cBu kit bulunamadı!"
+  yetki-yok: "&cBu kit için yetkin yok!"
+
+seviye:
+  atladin: |
+    &8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          &6&l⬆ SEVİYE ATLADIN! ⬆
+       &7Yeni Seviye: &e%seviye%
+       &7Ödül: &a%odul% %birim%
+    &8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  bilgi: |
+    &8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    %prefix%&6%oyuncu%'in Seviyesi:
+      &8► &eSeviye: &f%seviye%
+      &8► &eXP: &f%xp%&7/&f%gerekli%
+    &8&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+pvp:
+  acildi: "&aPvP modu açıldı!"
+  kapandi: "&cPvP modu kapatıldı!"
+  hedef-kapali: "&c%oyuncu% &7PvP modunu açmamış!"
+  senin-kapali: "&cPvP modunu açmalısın! &7/pvp"
+  oldurme: "&c%kurban% &7öldürüldü! &8(Katil: &c%katil%&8)"
+  odul: "&a+%odul% %birim% &7kazandın!"
+
+admin:
+  fly-acildi: "&aUçuş modu açıldı!"
+  fly-kapandi: "&cUçuş modu kapatıldı!"
+  heal: "&a%oyuncu% &7iyileştirildi!"
+  feed: "&a%oyuncu% &7doyuruldu!"
+  gamemode: "&a%oyuncu%&7 artık &e%mod% &7modunda!"
+
+market:
+  satin-aldin: "&a1 %esya% satın aldın! &7(-%fiyat% %birim%)"
+  yetersiz-bakiye: "&cYeterli paran yok! &7(%fiyat% %birim% gerekli)"

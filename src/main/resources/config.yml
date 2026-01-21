@@ -1,0 +1,90 @@
+# ═══════════════════════════════════════════════════════════
+#              PapazCore Ayarları
+# ═══════════════════════════════════════════════════════════
+
+# Sunucu Bilgileri
+sunucu:
+  isim: "&6&lPapaz's Server"
+  prefix: "&8[&6&l★&8] &e"
+  discord: "discord.gg/sunucun"
+  website: "www.sunucun.com"
+
+# Hoşgeldin Mesajları
+hosgeldin:
+  aktif: true
+  yeni-oyuncu-para: 1000
+  baslangic-esyalari: true
+
+# Ekonomi Ayarları
+ekonomi:
+  para-birimi: "Coin"
+  baslangic-parasi: 1000
+
+# Kit Bekleme Süreleri (saniye cinsinden)
+kit:
+  baslangic:
+    bekleme: 3600  # 1 saat
+  savasci:
+    bekleme: 21600  # 6 saat
+  
+# Seviye Sistemi
+seviye:
+  maden-xp: 5
+  mob-oldurme-xp: 10
+  seviye-atlama-odulu: 100  # seviye * bu değer kadar para
+
+# TPA Ayarları
+tpa:
+  bekleme-suresi: 60  # saniye
+  isinlanma-gecikmesi: 3  # saniye
+
+# Spawn Koruması
+spawn-korumasi:
+  aktif: true
+  yaricap: 10  # blok
+
+# PvP Ayarları
+pvp:
+  varsayilan: false
+  oldurme-odulu: 50
+
+# Market Fiyatları
+market:
+  elmas:
+    fiyat: 100
+  demir:
+    fiyat: 25
+  altin:
+    fiyat: 50
+  zumrut:
+    fiyat: 75
+  altin-elma:
+    fiyat: 200
+  tanri-elmasi:
+    fiyat: 1000
+
+# Satış Fiyatları (market fiyatının %80'i)
+satis:
+  elmas: 80
+  demir: 20
+  altin: 40
+  zumrut: 60
+  komur: 5
+  redstone: 10
+  lapis: 15
+
+# Otomatik Mesajlar
+oto-mesajlar:
+  aktif: true
+  aralik: 300  # saniye (5 dakika)
+  mesajlar:
+    - "&7Discord sunucumuza katıl: &b%discord%"
+    - "&7VIP satın almak için: &e%website%"
+    - "&7Yardım için &e/yardim &7yaz!"
+    - "&7Sunucuyu arkadaşlarına öner!"
+    - "&7Bug bulursan adminlere bildir!"
+
+# Scoreboard
+scoreboard:
+  aktif: true
+  baslik: "&6&l✦ %sunucu% ✦"
