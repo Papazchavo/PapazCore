@@ -15,46 +15,192 @@
 </p>
 
 <p align="center">
-  <a href="#-özellikler">Özellikler</a> •
-  <a href="#-kurulum">Kurulum</a> •
-  <a href="#-komutlar">Komutlar</a> •
-  <a href="#%EF%B8%8F-yapılandırma">Yapılandırma</a> •
-  <a href="#-yetkiler">Yetkiler</a>
-</p>
-
-<p align="center">
   <img src="https://img.shields.io/badge/Minecraft-1.8--1.21-brightgreen?style=for-the-badge&logo=minecraft" alt="Minecraft"/>
   <img src="https://img.shields.io/badge/Java-8+-orange?style=for-the-badge&logo=openjdk" alt="Java"/>
   <img src="https://img.shields.io/badge/Spigot%20%7C%20Paper-Desteklenir-blue?style=for-the-badge" alt="Spigot"/>
   <img src="https://img.shields.io/badge/Dil-Türkçe%20🇹🇷-red?style=for-the-badge" alt="Türkçe"/>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/github/license/Papazchavo/PapazCore?style=flat-square" alt="License"/>
-  <img src="https://img.shields.io/github/stars/Papazchavo/PapazCore?style=flat-square" alt="Stars"/>
-  <img src="https://img.shields.io/github/forks/Papazchavo/PapazCore?style=flat-square" alt="Forks"/>
-  <img src="https://img.shields.io/github/issues/Papazchavo/PapazCore?style=flat-square" alt="Issues"/>
-  <img src="https://img.shields.io/github/v/release/Papazchavo/PapazCore?style=flat-square" alt="Release"/>
-</p>
+---
+
+# 📥 KURULUM REHBERİ
+
+## 🔧 Adım 1: Gerekli Programları Yükle
+
+### Java 8+ Kurulumu
+
+1. **https://adoptium.net/** adresine git
+2. **Temurin 8** veya **Temurin 17** indir
+3. Kurulumu tamamla
+4. Test et:
+```bash
+java -version
+```
+
+### Maven Kurulumu (Derleme için gerekli)
+
+1. **https://maven.apache.org/download.cgi** adresine git
+2. **Binary zip archive** indir
+3. ZIP dosyasını çıkart (örnek: `C:\maven`)
+4. **Sistem Değişkenlerine** `C:\maven\bin` ekle:
+   - Windows: `Sistem Özellikleri > Ortam Değişkenleri > Path > Düzenle > Yeni`
+5. CMD'yi yeniden aç ve test et:
+```bash
+mvn -version
+```
 
 ---
 
-## 🌟 Neden PapazCore?
+## 📦 Adım 2: Plugini İndir
 
+### Yöntem A: Git ile (Önerilen)
+```bash
+git clone https://github.com/Papazchavo/PapazCore.git
+cd PapazCore
 ```
-┌─────────────────────────────────────────────────────────────┐
-│  ✅ Tek plugin, tüm temel özellikler                        │
-│  ✅ %100 Türkçe mesajlar                                    │
-│  ✅ 1.8 - 1.21 tüm sürümlerde çalışır                       │
-│  ✅ Kolay kurulum ve yapılandırma                           │
-│  ✅ Hafif ve performanslı                                   │
-│  ✅ Açık kaynak ve ücretsiz                                 │
-└─────────────────────────────────────────────────────────────┘
+
+### Yöntem B: ZIP olarak
+1. https://github.com/Papazchavo/PapazCore adresine git
+2. Yeşil **Code** butonuna tıkla
+3. **Download ZIP** seç
+4. ZIP'i çıkart
+
+---
+
+## 🔨 Adım 3: Plugini Derle
+
+### Windows için (Kolay)
+
+1. `PapazCore` klasörüne git
+2. **`DERLE.bat`** dosyasına çift tıkla
+3. Bekle...
+4. `target/PapazCore-1.0.0.jar` dosyası oluşacak ✅
+
+### Komut Satırı ile
+
+```bash
+cd PapazCore
+mvn clean package
+```
+
+Başarılı çıktı:
+```
+[INFO] BUILD SUCCESS
+[INFO] --------------------------------
+```
+
+JAR dosyası: `target/PapazCore-1.0.0.jar`
+
+---
+
+## 🚀 Adım 4: Sunucuya Kur
+
+1. `target/PapazCore-1.0.0.jar` dosyasını kopyala
+2. Minecraft sunucunun `plugins` klasörüne yapıştır:
+```
+sunucu/
+├── plugins/
+│   └── PapazCore-1.0.0.jar  <-- BURAYA
+├── server.jar
+└── ...
+```
+3. Sunucuyu **yeniden başlat**
+4. Konsola bak:
+```
+[PapazCore] ========================================
+[PapazCore]   PapazCore v1.0.0 Aktif!
+[PapazCore]   Gelistirici: Papaz
+[PapazCore] ========================================
 ```
 
 ---
 
-## ✨ Özellikler
+## ⚙️ Adım 5: Ayarları Özelleştir
+
+Plugin kurulduktan sonra `plugins/PapazCore/` klasörü oluşur:
+
+```
+plugins/PapazCore/
+├── config.yml      <-- Ana ayarlar
+├── messages.yml    <-- Tüm mesajlar
+├── data.yml        <-- Spawn ve oyuncu verileri
+├── economy.yml     <-- Para verileri
+├── homes.yml       <-- Ev verileri
+└── levels.yml      <-- Seviye verileri
+```
+
+### config.yml Düzenleme
+
+```yaml
+# Sunucu Bilgileri - BUNLARI DEĞİŞTİR!
+sunucu:
+  isim: "&6&lSunucunun Adi"
+  prefix: "&8[&6&l★&8] &e"
+  discord: "discord.gg/senin-sunucun"
+  website: "www.senin-siten.com"
+
+# Başlangıç Parası
+ekonomi:
+  para-birimi: "Coin"
+  baslangic-parasi: 1000
+
+# Market Fiyatları
+market:
+  elmas:
+    fiyat: 100
+  demir:
+    fiyat: 25
+```
+
+---
+
+## 🎮 Adım 6: Oyunda Test Et
+
+1. Sunucuya gir
+2. Şu komutları dene:
+
+| Komut | Beklenen Sonuç |
+|-------|----------------|
+| `/para` | Bakiyeni gösterir (1000 Coin) |
+| `/kit` | Kit listesini gösterir |
+| `/kit baslangic` | Başlangıç kitini verir |
+| `/market` | Market GUI açılır |
+| `/seviye` | Seviyeni gösterir |
+
+3. Admin olarak test et (OP ver):
+```
+/op SenınNickın
+```
+
+| Admin Komut | Sonuç |
+|-------------|-------|
+| `/setspawn` | Spawn noktası ayarlar |
+| `/fly` | Uçuş modu açar |
+| `/heal` | Can ve açlık doldurur |
+| `/gm 1` | Creative mod |
+
+---
+
+## ❓ Sorun Giderme
+
+### "mvn komutu bulunamadı"
+→ Maven'i PATH'e eklemedin. Adım 1'e dön.
+
+### "Java bulunamadı"
+→ Java 8+ yükle: https://adoptium.net/
+
+### "Plugin yüklenmiyor"
+→ Sunucu sürümünü kontrol et (Spigot/Paper 1.8-1.21 olmalı)
+
+### "Derleme hatası"
+→ İnternet bağlantını kontrol et, Maven bağımlılıkları indirmesi gerekiyor.
+
+### "Komutlar çalışmıyor"
+→ `/plugins` yaz, PapazCore yeşil mi kontrol et.
+
+---
+
+# ✨ ÖZELLİKLER
 
 <table>
 <tr>
@@ -139,43 +285,9 @@
 
 ---
 
-## 📥 Kurulum
+# 📋 TÜM KOMUTLAR
 
-### 📋 Gereksinimler
-
-| Program | Versiyon | Link |
-|---------|----------|------|
-| ☕ Java | 8+ | [Adoptium](https://adoptium.net/) |
-| 🔧 Maven | 3.6+ | [Apache Maven](https://maven.apache.org/) |
-| 🎮 Sunucu | Spigot/Paper 1.8-1.21 | [PaperMC](https://papermc.io/) |
-
-### 🚀 Hızlı Kurulum
-
-```bash
-# 1️⃣ Repoyu klonla
-git clone https://github.com/Papazchavo/PapazCore.git
-
-# 2️⃣ Klasöre gir
-cd PapazCore
-
-# 3️⃣ Derle
-mvn clean package
-
-# 4️⃣ JAR dosyasını al → target/PapazCore-1.0.0.jar
-```
-
-### 🪟 Windows Kullanıcıları
-
-1. `DERLE.bat` dosyasına **çift tıkla**
-2. `target/PapazCore-1.0.0.jar` dosyasını al
-3. Sunucunun `plugins` klasörüne kopyala
-4. Sunucuyu yeniden başlat ✅
-
----
-
-## 📋 Komutlar
-
-### 👤 Oyuncu Komutları
+## 👤 Oyuncu Komutları
 
 | Komut | Açıklama |
 |-------|----------|
@@ -190,12 +302,14 @@ mvn clean package
 | `/para` | Bakiyeni gör |
 | `/paragonder <oyuncu> <miktar>` | Para gönder |
 | `/kit` | Kit listesi |
+| `/kit baslangic` | Başlangıç kiti |
+| `/kit savasci` | Savaşçı kiti (VIP) |
 | `/seviye` | Seviyeni gör |
 | `/stats` | İstatistikler |
 | `/pvp` | PvP aç/kapa |
 | `/market` | Market GUI |
 
-### 👑 Admin Komutları
+## 👑 Admin Komutları
 
 | Komut | Yetki | Açıklama |
 |-------|-------|----------|
@@ -206,43 +320,13 @@ mvn clean package
 | `/gm <0/1/2/3>` | `papaz.gamemode` | Gamemode |
 | `/invsee <oyuncu>` | `papaz.invsee` | Envanter gör |
 | `/broadcast <mesaj>` | `papaz.broadcast` | Duyuru |
+| `/kit elmas` | `papaz.kit.admin` | Elmas kiti |
 
 ---
 
-## ⚙️ Yapılandırma
+# 🔑 YETKİLER
 
-### 📄 config.yml
-
-```yaml
-# 🏷️ Sunucu Bilgileri
-sunucu:
-  isim: "&6&lPapaz's Server"
-  prefix: "&8[&6&l★&8] &e"
-  discord: "discord.gg/sunucun"
-
-# 💰 Ekonomi
-ekonomi:
-  para-birimi: "Coin"
-  baslangic-parasi: 1000
-
-# 🏪 Market Fiyatları
-market:
-  elmas:
-    fiyat: 100
-  demir:
-    fiyat: 25
-  altin:
-    fiyat: 50
-```
-
-### 📝 messages.yml
-> Tüm mesajlar Türkçe ve %100 özelleştirilebilir!
-
----
-
-## 🔑 Yetkiler
-
-### 👑 Admin
+## 👑 Admin Yetkileri
 
 | Yetki | Açıklama |
 |-------|----------|
@@ -255,22 +339,36 @@ market:
 | `papaz.broadcast` | Duyuru |
 | `papaz.kit.admin` | Admin kiti |
 
-### ⭐ VIP
+## ⭐ VIP Yetkileri
 
 | Yetki | Açıklama |
 |-------|----------|
 | `papaz.kit.vip` | Savaşçı kiti |
 | `papaz.vip` | VIP sohbet rozeti |
 
-### 🛡️ Mod
+## 🛡️ Mod Yetkileri
 
 | Yetki | Açıklama |
 |-------|----------|
 | `papaz.mod` | Mod sohbet rozeti |
 
+### LuckPerms ile Yetki Verme
+
+```bash
+# VIP yetkisi ver
+/lp user OyuncuAdı permission set papaz.vip true
+/lp user OyuncuAdı permission set papaz.kit.vip true
+
+# Mod yetkisi ver
+/lp user OyuncuAdı permission set papaz.mod true
+
+# Admin yetkisi ver
+/lp user OyuncuAdı permission set papaz.admin true
+```
+
 ---
 
-## 🔧 Sürüm Uyumluluğu
+# 🎮 SÜRÜM UYUMLULUĞU
 
 ```
 ┌────────────────────────────────────────┐
@@ -293,25 +391,7 @@ market:
 
 ---
 
-## 🤝 Katkıda Bulunma
-
-```bash
-# 1. Fork'la
-# 2. Branch oluştur
-git checkout -b feature/yeniOzellik
-
-# 3. Commit yap
-git commit -m "Yeni özellik eklendi"
-
-# 4. Push et
-git push origin feature/yeniOzellik
-
-# 5. Pull Request aç
-```
-
----
-
-## 📞 Destek
+# 📞 DESTEK
 
 | Platform | Link |
 |----------|------|
@@ -321,9 +401,10 @@ git push origin feature/yeniOzellik
 
 ---
 
-## 📜 Lisans
+# 📜 LİSANS
 
 Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır.
+Özgürce kullanabilir, değiştirebilir ve dağıtabilirsin.
 
 ---
 
